@@ -9,26 +9,27 @@ def test_read_root():
     assert response.json() == {"message": "Welcome to the FastAPI application!"}
 
 def test_read_item():
-    response = client.get("/items/1?name=TestItem&detail=true")
+    response = client.get("/items/1?name=TestItem&detail=Today_was_a_good_day")
     assert response.status_code == 200
     assert response.json() == {
         "item_id": 1, 
         "name": "TestItem",
-        "detail": "This is a detailed description of the item."
+        "detail": "This is a detailed description of the item. Today_was_a_good_day"
     }
 
 def test_create_item():
     response = client.post("/items/", json={"name": "TestItem", "description": "This is a test item"})
+    print(response.json())
     assert response.status_code == 200
     assert response.json() == {"name": "TestItem", "description": "This is a test item"}
 
 def test_read_user():
-    response = client.get("/users/1?include_email=true")
+    response = client.get("/users/1?include_email=Omusubi0123@github.com")
     assert response.status_code == 200
     assert response.json() == {
         "user_id": 1, 
         "username": "user_example",
-        "email": "user@example.com"
+        "email": "This is the email address for user 1"
     }
 
 def test_create_user():
