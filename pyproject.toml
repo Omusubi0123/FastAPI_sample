@@ -15,6 +15,7 @@ fire = "^0.5.0"
 fastapi = "^0.110.2"
 mypy = "^1.11.1"
 python-dotenv = "^1.0.1"
+unicorn = "^2.0.1.post1"
 
 
 [tool.poetry.group.dev.dependencies]
